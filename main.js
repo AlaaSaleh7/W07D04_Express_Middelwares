@@ -69,6 +69,16 @@ authRouter.use("/users", (req, res, next) => {
 //--------------------------------------------------------------------
 
 //q2
+authRouter.post("/users/create",(req,res,next)=>{
+    const newUser = req.body.name;
+    users.push(newUser)
+    res.json(newUser);
+    next();
+})
+app.use("/users/create",authRouter);
+//--------------------------------------------------------------------
+
+//q3
 
 //--------------------------------------------------------------------
 app.listen(port,()=>{
